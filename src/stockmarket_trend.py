@@ -1,4 +1,5 @@
 import os
+import csv
 import threading
 import requests
 import time
@@ -14,7 +15,13 @@ def get_stock_price():
     price = response['price'][:-3]
     print(f'{time.ctime(time.time())} : {price}')
 
+# def output_to_csv(time, price):
+    
+
 starttime = time.time()
+
+csv_file = open(f'../{time.ctime(time.time())}')
+
 while True:
     get_stock_price()
     time.sleep(5.0 - ((time.time() - starttime) % 5.0))
