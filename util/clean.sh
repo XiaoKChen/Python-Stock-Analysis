@@ -11,6 +11,7 @@ echo "################################################################"
 echo "################ Cleaning csv_data && json_data ################"
 echo "################################################################"
 
+
 rm -rf ../run.sh             ; echo "rm -rf ../run.sh"
 rm -rf ../csv_data/*         ; echo "rm -rf ../csv_data/*"
 rm -rf ../json_data/*        ; echo "rm -rf ../json_data/*"
