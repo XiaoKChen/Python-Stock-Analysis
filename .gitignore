@@ -1,3 +1,5 @@
 .env
 csv_data
 json_data
+__pycache__
+run.sh
