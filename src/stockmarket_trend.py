@@ -1,6 +1,5 @@
 import os
 import csv
-import threading
 import requests
 import time
 from dotenv import load_dotenv
