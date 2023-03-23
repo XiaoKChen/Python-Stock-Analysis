@@ -14,14 +14,15 @@ def get_stock_price():
     return (time.ctime(time.time()), price)
 
 def output_to_csv(input_time, input_price):
-    writer.writerow({input_time, input_price})
+    writer.writerow({'Time':input_time, 'Price':input_price})
 
 ticker    = 'AAPL'
 api_key   = os.environ['APIKEY']
 starttime = time.time()
 csv_file  = open(f'../csv_data/{time.ctime(starttime)}.csv', 'w')
-writer = csv.writer(csv_file)
-writer.writerow({'Time', 'Price'})
+fieldname = ['Time', 'Price']
+writer = csv.DictWriter(csv_file, fieldnames=fieldname)
+writer.writeheader()
 
 while True:
     input_time, input_price = get_stock_price()
