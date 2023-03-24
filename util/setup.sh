@@ -14,7 +14,7 @@ echo "################################################################"
 
 touch "../run.sh"
 echo "cd ./src" >> ../run.sh
-echo "python3 main.py $@" >> ../run.sh
+echo 'python3 main.py $@' >> ../run.sh
 chmod +x ../run.sh
 
 
