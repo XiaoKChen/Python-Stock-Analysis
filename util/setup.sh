@@ -8,14 +8,30 @@ set -e
 
 
 echo "################################################################"
-echo "####################### Creating Run.sh ########################"
+echo "######################## Running Setup #########################"
 echo "################################################################"
 
 
-touch "../run.sh"
-echo "cd ./src" >> ../run.sh
-echo 'python3 main.py $@' >> ../run.sh
-chmod +x ../run.sh
+if [ ! -d '../csv_data' ]; then
+  mkdir ../csv_data
+fi
+
+if [ ! -d '../json_data' ]; then
+  mkdir ../json_data
+fi
+
+if [ ! -f '../.env' ]; then
+  touch ../.env
+  echo "APIKEY=" >> ../.env
+  echo "Remeber to fill you .env with an APIKEY"
+fi
+
+if [ ! -f '../run.sh' ]; then
+  touch "../run.sh"
+  echo "cd ./src" >> ../run.sh
+  echo 'python3 main.py $@' >> ../run.sh
+  chmod +x ../run.sh
+fi
 
 
 echo "################################################################"
