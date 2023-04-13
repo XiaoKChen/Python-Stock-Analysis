@@ -25,11 +25,9 @@ def get_data_slope():
             
     print(f'[{highestPeak_index}]{highestTime} : {highestPeak}')
     
-    for a in DataList:
-        if (DataList.index(a) >= highestPeak_index):
-            filterDataList.append(a)
+    for b in DataList:
+        if (DataList.index(b) >= highestPeak_index):
+            filterDataList.append(b)
             
-    print(filterDataList)
-    print()
-    print()
-    print(DataList)
+    for c in filterDataList:
+        print(f'[{c["datetime"]}] {c["high"]}')
