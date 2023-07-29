@@ -2,7 +2,7 @@ import sys
 sys.path.append('../config')
 import time
 import config
-from fetch_stock_data import get_stock_data
+from fetch_stock_data import get_stock_data, json_to_csv
 from determine_data_slope import get_data_slope, popluate_data
 from stockmarket_trend import get_stock_price, output_to_csv, create_csv, starttime
 
@@ -13,6 +13,7 @@ if __name__ == '__main__' :
         
         if (mode == 1):
             get_stock_data(config.ticker, config.start_date, config.end_date, config.interval, config.api_key)
+            json_to_csv()
         elif (mode == 2):
             popluate_data()
             get_data_slope()
